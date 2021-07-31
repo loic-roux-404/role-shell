@@ -1,0 +1,22 @@
+---
+
+- name: Configure motd
+  become: yes
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+   - { src: motd.j2, dest: "{{ motd }}" }
+
+- name: zsh for root user
+  file:
+    path: "{{ root_home }}/.zshrc"
+    state: touch
+  become: yes
+  when: zsh_shared == true
+
+- name: Include zsh config for root
+  lineinfile:
+    path: "{{ root_home }}/.zshrc"
+    line: "source /usr/share/zsh-config/.zshrc"
+  when: zsh_shared == true

@@ -1,0 +1,11 @@
+---
+
+# motd messages
+motd_message_1: Ansible generated
+motd_message_2: ''
+motd_message_3: ''
+
+root_home: /root
+
+# user configs files
+motd: "/etc/motd"

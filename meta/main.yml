@@ -1,0 +1,33 @@
+---
+galaxy_info:
+  author: Loic Roux
+  company: Fiducial
+  description: Shell env for your server
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+    - name: EL
+      versions:
+        - 7
+    - name: MacOSX
+      versions:
+        - 10.12
+  galaxy_tags:
+    - system
+    - shell
+    - user
+    - git
+dependencies:
+   - name: role-zsh
+     src: ssh://git@github.com/loic-roux-404/role-zsh.git
+     version: env-404
+     scm: git
+     tags:  [ 'role-zsh' ]
